@@ -16,6 +16,11 @@ return {
 
       local keymap = vim.keymap
 
+      local toggleInlay = function ()
+         local current_value = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+         vim.lsp.inlay_hint.enable(not current_value, { bufnr = 0 })
+      end
+
       vim.api.nvim_create_autocmd("LspAttach", {
          group = vim.api.nvim_create_augroup("UserLspConfig", {}),
          callback = function(ev)
@@ -41,6 +46,9 @@ return {
 
             opts.desc = "See available code actions"
             keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+
+            opts.desc = "Toggle inlay hint"
+            keymap.set("n", "hh", toggleInlay, opts)
 
             opts.desc = "Smart rename"
             keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
@@ -77,26 +85,23 @@ return {
       end
 
       mason_lspconfig.setup_handlers({
-        -- default handler for installed servers
-        function(server_name)
-          lspconfig[server_name].setup({
+         -- default handler for installed servers
+         function(server_name)
+            lspconfig[server_name].setup({
             capabilities = capabilities,
-          })
-        end,
-        ["emmet_ls"] = function()
-          -- configure emmet language server
-          lspconfig["emmet_ls"].setup({
+         })
+         end,
+         ["emmet_ls"] = function()
+            lspconfig["emmet_ls"].setup({
             capabilities = capabilities,
             filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
           })
-        end,
-        ["lua_ls"] = function()
-          -- configure lua server (with special settings)
-          lspconfig["lua_ls"].setup({
+         end,
+         ["lua_ls"] = function()
+         lspconfig["lua_ls"].setup({
             capabilities = capabilities,
             settings = {
               Lua = {
-                -- make the language server recognize "vim" global
                 diagnostics = {
                   globals = { "vim" },
                 },
