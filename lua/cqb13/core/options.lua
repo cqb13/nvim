@@ -37,9 +37,9 @@ opt.splitbelow = true -- split horizontal window to the bottom
 local general = augroup("General", { clear = true })
 
 autocmd("BufEnter", {
-  callback = function()
-    vim.opt.formatoptions:remove { "c", "r", "o" }
-  end,
-  group = general,
-  desc = "Disable New Line Comment",
+	callback = function()
+		vim.opt.formatoptions:remove({ "c", "r", "o" })
+	end,
+	group = general,
+	desc = "Disable New Line Comment",
 })
