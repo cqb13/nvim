@@ -1,8 +1,6 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
-local autocmd = vim.api.nvim_create_autocmd
-local augroup = vim.api.nvim_create_augroup
 
 opt.relativenumber = true
 opt.number = true
@@ -34,12 +32,15 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.splitright = true -- split vertical window ot the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
-local general = augroup("General", { clear = true })
-
-autocmd("BufEnter", {
-	callback = function()
-		vim.opt.formatoptions:remove({ "c", "r", "o" })
-	end,
-	group = general,
-	desc = "Disable New Line Comment",
-})
+-- local autocmd = vim.api.nvim_create_autocmd
+-- local augroup = vim.api.nvim_create_augroup
+--
+-- local general = augroup("General", { clear = true })
+--
+-- autocmd("BufEnter", {
+-- 	callback = function()
+-- 		vim.opt.formatoptions:remove({ "c", "r", "o" })
+-- 	end,
+-- 	group = general,
+-- 	desc = "Disable New Line Comment",
+-- })

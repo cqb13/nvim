@@ -48,7 +48,7 @@ return {
 				keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
 				opts.desc = "Toggle inlay hint"
-				keymap.set("n", "hh", toggleInlay, opts)
+				keymap.set("n", "<leader>hh", toggleInlay, opts)
 
 				opts.desc = "Smart rename"
 				keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
