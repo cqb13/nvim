@@ -6,8 +6,8 @@ opt.relativenumber = true
 opt.number = true
 
 -- tabs & indentation
-opt.tabstop = 3
-opt.shiftwidth = 3
+opt.tabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true -- expand tab to space
 opt.autoindent = true -- copy indent from curent line when starting a new one
 
