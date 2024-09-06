@@ -31,6 +31,7 @@ return {
 				"pyright",
 				"rust_analyzer",
 				"jdtls",
+				"gopls",
 			},
 		})
 
