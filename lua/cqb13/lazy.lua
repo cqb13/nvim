@@ -11,7 +11,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "cqb13.plugins" }, { import = "cqb13.plugins.lsp" } }, {
+require("lazy").setup({
+	{ import = "cqb13.plugins" },
+	{ import = "cqb13.plugins.lsp" },
+	{ import = "cqb13.plugins.ui" },
+	{ import = "cqb13.plugins.tools" },
+	{ import = "cqb13.plugins.completions" },
+}, {
 	change_detection = {
 		notify = false,
 	},
