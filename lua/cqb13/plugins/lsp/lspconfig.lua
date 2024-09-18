@@ -69,7 +69,7 @@ return {
 				keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
 				opts.desc = "Restart LSP"
-				keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+				keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
 			end,
 		})
 
@@ -77,7 +77,6 @@ return {
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
-		-- (not in youtube nvim video)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
