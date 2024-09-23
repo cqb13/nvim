@@ -16,11 +16,3 @@ keymap.set(
 	"<cmd>vsplit term://%:p:h//zsh<CR>",
 	{ desc = "Open the terminal to the current directory in a vertical split" }
 )
-
--- tab keybinds
-keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
-keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
-keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
-keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
-keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
-keymap.set("n", "<leader>tt", "<cmd>tabnew | term<CR>", { desc = "Open the terminal in a new tab" })
