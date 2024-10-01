@@ -12,7 +12,7 @@ keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current window" 
 
 -- terminal controls
 function OpenTerminal()
-	vim.cmd("vsplit term://zsh")
+	vim.cmd("vsplit term://%:p:h//zsh")
 	vim.cmd("startinsert")
 end
 
