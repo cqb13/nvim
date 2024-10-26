@@ -32,6 +32,7 @@ return {
 				"rust_analyzer",
 				"jdtls",
 				"gopls",
+				"emmet_language_server",
 			},
 		})
 
