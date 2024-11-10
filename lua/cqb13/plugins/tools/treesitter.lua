@@ -9,7 +9,7 @@ return {
 	config = function()
 		local treesitter = require("nvim-treesitter.configs")
 
-		treesitter.setup({ -- enable syntax highlighting
+		treesitter.setup({
 			highlight = {
 				enable = true,
 			},
@@ -37,6 +37,7 @@ return {
 				"bash",
 				"lua",
 				"vim",
+				"vue",
 				"dockerfile",
 				"gitignore",
 				"vimdoc",
@@ -52,5 +53,7 @@ return {
 				},
 			},
 		})
+
+		vim.api.nvim_set_keymap("n", "<leader>ti", "<cmd>InspectTree<CR>", { desc = "Open treesitter tree" })
 	end,
 }
