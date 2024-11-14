@@ -12,9 +12,8 @@ keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current window" 
 keymap.set("n", "<leader>s.", "<cmd>vertical resize -10<CR>", { desc = "Decrease width" })
 keymap.set("n", "<leader>s,", "<cmd>vertical resize +10<CR>", { desc = "Increase width" })
 
--- terminal controls
 function OpenTerminal()
-	vim.cmd("vsplit term://%:p:h//zsh")
+	vim.cmd("vsplit term://zsh")
 	vim.cmd("startinsert")
 end
 
